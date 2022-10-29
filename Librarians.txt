@@ -1,0 +1,7 @@
+7553,yousry,khalid@gmail.com,ALEXANDRIA,015
+7563,yousry,yousry@gmail.com,ALEXANDRIA,010
+7693,khaled,yousry@gmail.com,ALEXANDRIA,010
+7644,ahmed,gffgfn@gmail.com,mfdsj,011
+7900,farida,gffgfn@gmail.com,mfdsj,011
+7500,yousef,yousry@gmail.com,ALEXANDRIA,010
+7632,name,m,ds,0120
