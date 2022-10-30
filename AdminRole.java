@@ -6,7 +6,7 @@ public class AdminRole {
     private LibrarianUserDatabase database;
 
     public AdminRole(LibrarianUserDatabase database) {
-        this.database = database;
+        this.database = database;   
     }
 
     public LibrarianUserDatabase getDatabase() {
