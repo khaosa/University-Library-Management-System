@@ -16,15 +16,30 @@ public class Assignment3 {
     public static void main(String[] args) {
   
         
+       StudentBookDatabase database = new StudentBookDatabase("filename.txt");
        
-       // System.out.println( LocalDate.parse("12-02-2022", DateTimeFormatter.ofPattern("dd-MM-yyyy")));
-        
-       /* 
-        LibrarianUserDatabase Database = new LibrarianUserDatabase("Librarians.txt");
+       BookDatabase Database = new BookDatabase("x.txt");
+       
+       //AdminRole khalid = new AdminRole(Database);
+       
+       Book test1 = new Book("B2568", "BookTtitle", "khalid", "khalid", 1);
+       StudentBook test2 = database.createRecordFrom("7693,B2568,12-02-2022");
+       
+    
+       database.insertRecord(test2);
+       Database.insertRecord(test1);
+       
+       LibrarianRole khalid = new LibrarianRole(Database, database);
+        System.out.println(khalid.borrowBook(test2.getStudentId(), test2.getBookId(), test2.getBorrowDate()));
+       // System.out.println(test.getStudentId() + ", " + test.getBookId() + ", " + test.getBorrowDate());
+                
+       
+       
+      
 
-        AdminRole khalid = new AdminRole(Database);
+       
 
-        LibrarianUser[] newArray = khalid.getListOfLibrarians();*/
+       // LibrarianUser[] newArray = khalid.getListOfLibrarians();*/
 
     }
 }
