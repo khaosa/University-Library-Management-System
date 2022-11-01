@@ -16,10 +16,8 @@ public class StudentBookDatabase extends Database{
     
     @Override
     public StudentBook createRecordFrom(String line){
-       DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+       DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         String delimited[] = line.split(",");    
-        
-       // System.out.println(LocalDate.parse("12-02-2022", formatter));
     
         return new StudentBook(delimited[0], delimited[1], LocalDate.parse(delimited[2], formatter));
     }
