@@ -1,12 +1,13 @@
 package assignment.pkg3;
 
+import java.io.FileNotFoundException;
 
 public class AdminRole {
 
     private LibrarianUserDatabase database;
 
-    public AdminRole(LibrarianUserDatabase database) {
-        this.database = database;   
+    public AdminRole(/*LibrarianUserDatabase database*/) {
+        //     this.database = database;   
     }
 
     public LibrarianUserDatabase getDatabase() {
@@ -29,7 +30,7 @@ public class AdminRole {
         LibrarianUser[] listOfLibrarians = new LibrarianUser[this.database.returnAllRecords().size()];
 
         return this.database.returnAllRecords().toArray(listOfLibrarians);
-
+       
     }
 
     public void removeLibrarian(String key) {
