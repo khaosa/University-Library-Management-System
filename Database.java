@@ -89,7 +89,7 @@ abstract public class Database {
             System.out.println("User with ID " + key + " not found.");
         } else {
             records.remove(index);
-            System.out.println("Record deleted.");
+            System.out.println("Record " + key + " deleted.");
         }
         
     }
