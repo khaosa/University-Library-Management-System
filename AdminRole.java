@@ -1,46 +1,37 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package assignment.pkg3;
 
-import java.io.FileNotFoundException;
+/**
+ *
+ * @author Ahmed
+ */
+public class TestAdmin {
 
-public class AdminRole {
-
-    private LibrarianUserDatabase database;
-
-    public AdminRole(/*LibrarianUserDatabase database*/) {
-        //     this.database = database;   
+    public static void test1() {
+        AdminRole admin = new AdminRole();
+        LibrarianUserDatabase database = new LibrarianUserDatabase("Librarians.txt");
+        admin.setDatabase(database);
+        LibrarianUser[] arrayOfLibrarianUsers = admin.getListOfLibrarians();
+        System.out.println("Current number of librarian users  = " + arrayOfLibrarianUsers.length);
+        admin.addLibrarian("L1100", "Mariam", "mariam@gmail.com", "Alexandria", "01011845684");
+        arrayOfLibrarianUsers = admin.getListOfLibrarians();
+        System.out.println("Current number of librarian users  = " + arrayOfLibrarianUsers.length);
+        System.out.println(arrayOfLibrarianUsers[2].lineRepresentation());
+        admin.removeLibrarian("L1400");
+        arrayOfLibrarianUsers = admin.getListOfLibrarians();
+        System.out.println("Current number of librarian users  = " + arrayOfLibrarianUsers.length);
+        System.out.println(arrayOfLibrarianUsers[2].lineRepresentation());
+        admin.removeLibrarian("L1600");
+        arrayOfLibrarianUsers = admin.getListOfLibrarians();
+        System.out.println("Current number of librarian users  = " + arrayOfLibrarianUsers.length);
+        System.out.println(arrayOfLibrarianUsers[3].lineRepresentation());
+        admin.logout();
     }
 
-    public LibrarianUserDatabase getDatabase() {
-        return database;
+    public static void main(String[] args) {
+        test1();
     }
-
-    public void setDatabase(LibrarianUserDatabase database) {
-        this.database = database;
-    }
-
-    public void addLibrarian(String librarianId, String name, String email,
-            String address, String phoneNumber) {
-
-        LibrarianUser temp = new LibrarianUser(librarianId, name, email, address, phoneNumber);
-        this.database.insertRecord(temp);
-        this.database.saveToFile();
-    }
-
-    public LibrarianUser[] getListOfLibrarians() {
-        LibrarianUser[] listOfLibrarians = new LibrarianUser[this.database.returnAllRecords().size()];
-
-        return this.database.returnAllRecords().toArray(listOfLibrarians);
-       
-    }
-
-    public void removeLibrarian(String key) {
-
-        this.database.deleteRecord(key);
-        this.database.saveToFile();
-    }
-
-    public void logout() {
-        this.database.saveToFile();
-    }
-
 }
